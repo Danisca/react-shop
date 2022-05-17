@@ -1,0 +1,20 @@
+{
+  "name": "frontend-developer-react",
+  "version": "1.0.0",
+  "description": "react shop",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "javaScript",
+    "shop"
+  ],
+  "author": "Danis Canada <dcanadablandon@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
