@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/nav.scss';
+import '../styles/header.scss';
 
-const Nav = ()=>{
+const Header = ()=>{
     return (
         <nav className="navbar">
             <img className="menu-icon" src="./icons/icon_menu.svg" alt="menu icon"/>
@@ -34,4 +33,4 @@ const Nav = ()=>{
         </nav>  
     );
 }
-export default Nav;
+export default Header;
