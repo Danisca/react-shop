@@ -5,7 +5,7 @@ import Login from '../containers/Login';
 import SendEmail from '../containers/SendEmail';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
-import '../styles/globals.css';
+import '@styles/globals.css';
 
 const App = ()=>{
     return(

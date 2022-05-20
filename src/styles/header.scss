@@ -1,4 +1,8 @@
 @import 'vars';
+body{
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
 .navbar{
     display: flex;
     flex-direction: row;
@@ -16,10 +20,11 @@
 .menu-icon{
     display: none;
 }
-.navbar .navbar-left {
+.navbar .navbar-left, .navbar .navbar-right {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 30px;
 }
 .navbar .navbar-left ul,
 .navbar .navbar-right ul{
@@ -28,6 +33,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.navbar .navbar-left .navbar-left-logo{
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 .navbar .navbar-left ul li,
@@ -51,9 +63,18 @@
 .navbar .navbar-right ul li a {
     color: var(--black);
 }
+.navbar .navbar-right ul li.login-link a{
+    color: var(--hospital-green);
+    font-weight: bolder;
+}
 .shopping-car{
     position: relative;
 }
+
+/* .shopping-car-with-items{
+    display: inline-block;
+    height: 30px;
+} */
 
 .shopping-car div {
     width: 15px;
@@ -70,10 +91,26 @@
     .menu-icon{
         display: block;
     }
+    .navbar{
+        padding: 12px 4px;
+    }
+
+    .navbar .navbar-left, .navbar .navbar-right{
+        justify-content: center;
+    }
+
+    .login-link{
+        display: none;
+    }
+
     .navbar-left ul:nth-child(2){
         display: none;
     }
-    .navbar-right .user-email{
+    .navbar-right .user-email, .navbar-right .login-link{
         display: none;
+    }
+    .navbar .navbar-left ul li, .navbar .navbar-right ul li {
+        margin-right: 0;
+        justify-content: center;
     }
 }

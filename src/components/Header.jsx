@@ -1,18 +1,27 @@
 import React from "react";
 import "@styles/header.scss";
 import ImageComponent from '@components/ImageComponent';
+import ListLink from "@components/ListLink";
+import LoggedIn from "@components/LoggedIn";
+import NotLoggedIn from '@components/NotLoggedIn';
+
 import menuLogo from '@logos/logo_yard_sale.svg';
 import menuIcon from '@icons/icon_menu.svg';
-import shoppingCar from '@icons/icon_shopping_cart.svg';
-// import shoppingCarNotification from '@icons/icon_shopping_cart_notification.svg';
+
+
+
+const loggedIn = false;
 
 const Header = () => {
   return (
     <nav className="navbar">
+      <div className="navbar-left-logo">
         <ImageComponent image={menuIcon} imageAlt={"menu icon"} className={"menu-icon"}/>
+
+      </div>
       <section className="navbar-left">
         {/* <img src="./ImageComponents/ImageComponent_yard_sale.svg" alt="" /> */}
-        <ImageComponent image={menuLogo} imageAlt={"Logo de la pagina"}/>
+        <ImageComponent image={menuLogo} imageAlt={"Logo de la pagina"} />
         <ul>
           <li>
             <a href="#">All</a>
@@ -35,18 +44,7 @@ const Header = () => {
         </ul>
       </section>
       <section className="navbar-right">
-        <ul>
-          <li className="user-email">
-            <a href="#">platzi@example.com</a>
-          </li>
-          <li className="shopping-car">
-              <ImageComponent image={shoppingCar} imageAlt={"shopping car icon"} />
-            <div>2</div>
-          </li>
-          {/* <li className="shopping-car-with-items">
-              <ImageComponent image={shoppingCarNotification} imageAlt={"shopping car with notification"} />
-          </li> */}
-        </ul>
+          {loggedIn == true ? <LoggedIn/> : <NotLoggedIn/>}
       </section>
     </nav>
   );
