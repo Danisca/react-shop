@@ -23,7 +23,6 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@containers': path.resolve(__dirname, 'src/containers/'),
-      '@routes': path.resolve(__dirname, 'src/routes/'),
 
       '@styles': path.resolve(__dirname, 'src/styles/')
     }
