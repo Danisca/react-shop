@@ -1,0 +1,84 @@
+@import 'vars';
+
+.create-account{
+	width: 100%;
+	height: 90vh;
+	display: grid;
+	justify-items: center;
+}
+.form-container-signup{
+	width: 300px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	// margin-top: 40px;
+}
+
+.signup-title{
+	text-align: center;
+}
+
+.signup-form{
+	display: flex;
+	flex-direction: column;
+}
+.signup-form .label{
+	font-size: var(--md);
+	font-weight: bold;
+	margin-bottom: 4px;
+	margin-top: 8px;
+}
+.signup-form .input{
+	background-color: var(--text-input-field);
+	border: none;
+	border-radius: 8px;
+	margin-bottom: 12px;
+	height: 50px;
+	width: 100%;
+	padding-left: 6px;
+	font-size: var(--md);
+}
+.btn{
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: var(--md);
+	font-weight: bold;
+	margin-top: 16px;
+	height: 50px;
+	width: 100%;
+	
+}
+.btn-primary{
+	color: var(--white);
+	background-color: var(--hospital-green);
+	
+}
+
+.btn-secondary{
+	background-color: var(--white);
+	color: var(--hospital-green);
+	border: solid 0.1px var(--hospital-green);
+	margin-top: 40px;
+}
+@media(max-width: 640px){
+	.signup-form-container{
+		margin-top: 8px;
+	}
+	.signup-form{
+		height: 100%;
+		justify-content: space-between;
+		/* margin-top: ; */
+	}
+	.signup-form .label{
+		margin-bottom: 4px;
+	}
+	
+	.signup-form .input{
+		margin-bottom: 4px;
+		margin-top: 4px;
+	}
+	.signup-form .btn{
+		margin-top: 0;
+	}
+}
