@@ -7,24 +7,24 @@
     display: grid;
     justify-items: center;
 }
-.form-container{
+.form-container-login{
     width: 300px;
     display: flex;
     flex-direction: column;
 }
 
-.form{
+.form-login{
     display: flex;
     flex-direction: column;
     margin-top: 100px;
 }
-.form .label{
+.form-login .label{
     font-size: var(--md);
     font-weight: bold;
     margin-bottom: 4px;
     margin-top: 8px;
 }
-.form .input{
+.form-login .input{
     background-color: var(--text-input-field);
     border: none;
     border-radius: 8px;
@@ -34,6 +34,11 @@
     padding-left: 6px;
     font-size: var(--md);
 }
+
+.form-login input[placeholder]{
+    font-size: var(--md);
+}
+
 .btn{
     border: none;
     border-radius: 8px;
@@ -66,6 +71,7 @@
 .forgot-my-password a{
     color: var(--hospital-green);
     text-decoration: none;
+    font-weight: bold;
 }
 
 .logo{
