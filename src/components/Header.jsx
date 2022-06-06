@@ -1,18 +1,13 @@
 import React from "react";
 import "@styles/header.scss";
 import ImageComponent from '@components/ImageComponent';
-import ListLink from "@components/ListLink";
 import LoggedIn from "@components/LoggedIn";
 import NotLoggedIn from '@components/NotLoggedIn';
 
 import menuLogo from '@logos/logo_yard_sale.svg';
 import menuIcon from '@icons/icon_menu.svg';
 
-
-
-const loggedIn = false;
-
-const Header = () => {
+const Header = (props) => {
   return (
     <nav className="navbar">
       <div className="navbar-left-logo">
@@ -44,7 +39,11 @@ const Header = () => {
         </ul>
       </section>
       <section className="navbar-right">
-          {loggedIn == true ? <LoggedIn/> : <NotLoggedIn/>}
+          {
+          props.isLogdedIn === true 
+            ? <LoggedIn  clickHandle={props.clickHandle}/>
+            : <NotLoggedIn/>
+          }
       </section>
     </nav>
   );
