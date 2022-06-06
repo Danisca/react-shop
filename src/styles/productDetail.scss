@@ -1,0 +1,117 @@
+	@import 'vars';
+	
+	.product-details-info{
+		display: grid;
+		position: absolute;
+		background-color: white;
+		right: 0;
+		top: 55px;
+		grid-template-rows: auto auto;
+		height: 100vh;
+		width: 300px;
+		/* border: 1px solid var(--very-light-pink); */
+		/* padding: 12px; */
+	}
+	.product-photos{
+		margin: 0;
+		padding: 0;
+	}
+	.product-photos img{
+		height: 300px;
+		width: 300px;
+		position: relative;
+		object-fit: cover;
+		border-bottom-right-radius: 12px;
+		border-bottom-left-radius: 12px;
+	}
+	.close-menu-icon{
+		background-color: white;
+		position: absolute;
+		bottom: 10px;
+		top: 10px;
+		left: 10px;
+		z-index: 2;
+		height: 14px;
+		width: 14px;
+		border-radius: 50%;
+		padding: 12px;
+	}
+
+	.close-menu-icon:hover{
+		cursor: pointer;
+		padding: 14px;
+		box-shadow: 4px 2px 5px var(--very-light-pink);
+	}
+
+	.photos-btn{
+		display: flex;
+		justify-content: center;
+		place-items: center;
+		margin-top: 8px;
+	}
+	.product-photos .photos-btn div{
+		margin-right: 12px;
+		height: 8px;
+		width: 8px;
+		border-radius: 50%;
+		background-color: var(--very-light-pink);
+	}
+	.product-photos .photos-btn .active{
+		background-color: var(--hospital-green);
+
+	}
+	.product-details{
+		display: grid;
+		grid-template-rows: auto auto auto;
+		justify-content: center;
+		/* align-content: center; */
+		padding: 0 24px;
+		margin-bottom: 20px;
+	}
+	.info{
+		display: flex;
+		flex-direction: column;
+		/* justify-content: space-between; */
+	}
+	.info .product-price{
+		font-size: var(--md);
+		font-weight: bold;
+		margin-bottom: 8px;
+	}
+	.info .product-name{
+		font-size: var(--md);
+		/* color: var(--very-light-pink); */
+		font-weight: 300;
+		/* margin-bottom: 8px; */
+	}
+	.product-description{
+		font-weight: 300;
+
+	}
+	.btn{
+		height: 50px;
+		font-size: var(--md);
+		border:none;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		border-radius: 6px;
+		font-weight: bold;
+		color: var(--text-input-field);
+		background-color: var(--hospital-green);
+		/* align-self: flex-end; */
+		/* margin-bottom: 18px; */
+
+	}
+
+	@media (max-width: 640px) {
+		.product-info{
+			width: 100%;
+		}
+
+		.product-photos img {
+			height: 300px;
+			width: 100%;
+		}
+	}

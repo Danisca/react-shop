@@ -1,69 +1,49 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '@styles/products.scss';
 import Actions from '@components/Actions';
 import Card from '@components/Card';
+import ProductDetail from '@containers/ProductDetail';
+import useGetProducts from '../hooks/UseGetProduts';
+
+const API = 'http://api.escuelajs.co/api/v1/products/';
 
 const Products = () => {
+    // this state controls if show or not the details of a product
+    const [selectedProduct, setSelectedProduct] = useState({});
+    const data = useGetProducts(API);
+
+    // handle when to update a selectedProduct variable that controls the state
+    // when is call from the product's car the target has an product.id as it own html id
+    // when the close icon triggered the event there are no product.id 
+    function toggleProductDetails(e){
+        const id = e.target.id;
+        const product = data.find(d => d.id == id);
+        if (!product){
+            setSelectedProduct({})
+        }else{
+            setSelectedProduct(product);
+        }
+        // console.log(product);
+        // productDetails === true ? setProductsDetails(false) : setProductsDetails(true);
+    }
+
     return ( 
         <div className="products-container">
             {/* TODO: Actions must to be a separate organism */}
         <Actions/>
         {/* TODO: cards-container must to be a ordanism */}
         <div className="cards-container">
-            {/* TODO: each individual card must to be a separate component */}
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
-            <Card image={"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}
-            imageAlt={"product name"}
-            price={"120,00"}
-            name={"Bike"}
-            />
+        {data.map((product)=>(
+            <Card 
+                key={product.id}
+                product={product}
+                showProductDetails={toggleProductDetails}
+            />)
+        )}
         </div>
+        {selectedProduct.id > 0  ? <ProductDetail product={selectedProduct} closeMe={toggleProductDetails} /> : null}
     </div>
-     );
+  );
 }
  
 export default Products;
